@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>eStepin - Department of Registration & Stamps</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="top-header border-bottom">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-2">
+
+                <div class="d-flex align-items-center gap-3">
+                    <img src="assets/igr.png" alt="Government of Maharashtra Logo" class="department-logo">
+
+                    <div>
+                        <div class="department-title">DEPARTMENT OF REGISTRATION &amp; STAMPS</div>
+                        <div class="department-subtitle">
+                            Government of Maharashtra | नोंदणी व मुद्रांक विभाग
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dropdown d-none d-md-block">
+
+          <a href="#" class="d-flex align-items-center text-decoration-none" data-bs-toggle="dropdown"
+            aria-expanded="false">
+
+            <div class="text-end me-2">
+              <div class="small text-secondary">Wel-Come</div>
+              <div class="fw-bold" style="color: var(--primary-blue); font-size:13px;">
+                Guest User
+              </div>
+            </div>
+
+             <div class="user-icon me-2">
+            <i class="bi bi-person"></i>
+        </div>
+
+        <!-- Dropdown Arrow -->
+        <i class="bi bi-chevron-down dropdown-arrow"></i>
+
+
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end user-dropdown">
+
+            <li>
+              <a class="dropdown-item" href="login.html">
+                <i class="bi bi-box-arrow-in-right me-2"></i>
+                Login
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="help.html">
+                <i class="bi bi-question-circle me-2"></i>
+                Help
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="notice.html">
+                <i class="bi bi-megaphone me-2"></i>
+                पूर्व सूचना
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-download me-2"></i>
+                Download Input Form
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg main-navbar navbar-dark py-0">
+        <div class="container">
+
+            <a class="navbar-brand d-flex align-items-baseline gap-2" href="#">
+                <span class="brand-estepin">eStepin</span>
+                <span class="brand-tagline">Online Timeslot Booking</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="mainMenu">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Booking Chart</a></li>
+                    <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="receipt.html">Receipt</a></li>
+                    <li class="nav-item"><a class="nav-link" href="rebooking.html">Rebooking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- Sidebar -->
+                <aside class="col-lg-3">
+
+                    <div class="custom-card filter-card mb-4">
+                        <h4 class="filter-heading">Booking Filters</h4>
+
+                        <div class="mb-3">
+                            <label class="form-label">Select District</label>
+                            <select class="form-select">
+                                <option selected>Pune</option>
+                                <option>Mumbai</option>
+                                <option>Nashik</option>
+                                <option>Nagpur</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Select Shift</label>
+                            <select class="form-select">
+                                <option selected>General</option>
+                                <option>Morning</option>
+                                <option>Evening</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="form-label mb-2">Select Date</label>
+<div id="bookingDate"></div>
+              <input type="hidden" id="selectedDate">
+                        </div>
+                    </div>
+
+                    <!-- <div class="custom-card p-3 quick-links">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-3"><a href="login.html">→ &nbsp;Login</a></li>
+              <li class="mb-3"><a href="help.html">→ &nbsp;Help</a></li>
+              <li class="mb-3"><a href="notice.html">→ &nbsp;पुर्व सुचना</a></li>
+              <li><a href="#">→ &nbsp;Download Input Form</a></li>
+            </ul>
+          </div> -->
+
+                </aside>
+
+                <!-- Main Area -->
+                <section class="col-lg-9">
+
+                    <!-- Stats -->
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-4">
+                            <div class="custom-card stat-card">
+                                <div class="stat-label">Online Users</div>
+                                <div class="stat-value">11</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="custom-card stat-card teal">
+                                <div class="stat-label">Bookings for Tomorrow</div>
+                                <div class="stat-value">629</div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="custom-card stat-card gold">
+                                <div class="stat-label">Total Lifetime Bookings</div>
+                                <div class="stat-value">5,285,722</div>
+                            </div>
+                        </div>
+                    </div>
+<!-- <div class="custom-card overflow-hidden"></div> -->
+                    <div class="custom-card overflow-hidden">
+                        <div class="p-3 border-bottom bg-light">
+                            <h5 class="booking-title mb-0">Frequently Asked Questions (FAQs)</h5>
+                        </div>
+                        <!-- <div class="card-header faq-header">
+                            <h4 class="mb-0">
+                                <i class="bi bi-question-circle me-2"></i>
+                                Frequently Asked Questions (FAQs)
+                            </h4>
+                        </div> -->
+
+                        <div class="accordion accordion-flush custom-accordion" id="faqAccordion">
+
+                            <!-- 1 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q1">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#a1">
+                                        1. What are the timings for booking timeslot for concern SRO Offices?
+                                    </button>
+                                </h2>
+
+                                <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+
+                                        <table class="table table-sm w-50 table-bordered table-striped text-center">
+                                            <thead>
+                                                <tr>
+                                                    <th>Shift</th>
+                                                    <th>Booking Time</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><strong>Morning</strong></td>
+                                                    <td>07:50 AM - 11:00 AM<br>11:30 AM - 03:00 PM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>General</strong></td>
+                                                    <td>10:10 AM - 01:30 PM<br>02:00 PM - 05:50 PM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><strong>Evening</strong></td>
+                                                    <td>01:20 PM - 04:30 PM<br>05:00 PM - 08:30 PM</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 2 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q2">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a2">
+                                        2. What are the Tea/Lunch break for shiftwise SRO Offices?
+                                    </button>
+                                </h2>
+
+                                <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <table class="table table-bordered table-sm text-center w-50">
+                                            <thead>
+                                                <tr>
+                                                    <th>Shift</th>
+                                                    <th>Break Time</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>Morning</td>
+                                                    <td>11:00 AM - 11:30 AM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>General</td>
+                                                    <td>01:30 PM - 02:00 PM</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Evening</td>
+                                                    <td>04:30 PM - 05:00 PM</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 3 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q3">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a3">
+                                        3. Is login required for booking time slot?
+                                    </button>
+                                </h2>
+
+                                <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <div class="alert alert-success mb-0">
+                                            <strong>No.</strong> Login is not required for booking a time slot.
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 4 -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q4">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a4">
+                                        4. How to book the time slot through eStepin?
+                                    </button>
+                                </h2>
+
+                                <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <ol class="faq-list">
+                                            <li>Click on <strong>eStepin → Token Booking</strong>.</li>
+                                            <li>Click on <strong>Booking</strong>.</li>
+                                            <li>Select District.</li>
+                                            <li>Select Shift (by default General shift is selected).</li>
+                                            <li>Select Booking Date.</li>
+                                            <li>Select SRO Office.</li>
+                                            <li>Click Continue. If booking is available then only booking is allowed
+                                            </li>
+                                            <li>Enter Public Data Entry Number (ISARITA/MKCL).</li>
+                                            <li>Click Verify.</li>
+                                            <li>Select preferred Time Slot. first half of each shift timeslots are
+                                                reserved for epayment (eChallan(GRAS)/eSBTR)</li>
+                                            <li>Click Book.</li>
+                                            <li>After successful data entry system will show booking message(Message
+                                                will contain SRO office name,time slot token ID and RebookingId
+                                                assigned)</li>
+                                            <li>Click on Reciept button for reciept printing(Use ctrl+P for recipt
+                                                printing on printer).</li>
+                                            <li>Note down your TokenID and RebookingId for further use.</li>
+                                        </ol>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q5">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a5">
+                                        5. What are the compulsory parameters for booking time slot?
+                                    </button>
+                                </h2>
+
+                                <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>Data Entry Number Generate through Public Data Entry (ISARITA) or (MKCL)
+                                            Example :</p>
+                                        <ul>
+                                            <li>ISARITA Data Entry Number (11 digits)</li>
+                                            <li>MKCL Data Entry Number (21 digits)</li>
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q6">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a6">
+                                        6. How to see the booking chart?
+                                    </button>
+                                </h2>
+
+                                <div id="a6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <p>Click on Booking Chart button and select appropriate SRO office and date. You
+                                            will get the total booking status as visual chart.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q7">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a7">
+                                        7. How to print the receipt?
+                                    </button>
+                                </h2>
+
+                                <div id="a7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>Please follow the following steps</p>
+
+                                        <ol class="faq-list">
+                                            <li>Double click on Receipt Button.</li>
+                                            <li>Enter your token ID.</li>
+                                            <li>Click on Receipt Button.</li>
+                                            <li>Press CTRL-P to print the receipt.</li>
+                                        </ol>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q8">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a8">
+                                        8. What to do if Receipt is not Viewed?
+                                    </button>
+                                </h2>
+
+                                <div id="a8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>Allow Pop-ups from igrmaharashtra.gov.in or turn off pop-up blocker from
+                                            browser.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q9">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a9">
+                                        9. What is Rebooking?
+                                    </button>
+                                </h2>
+
+                                <div id="a9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <p>If you have already done booking and if you want to change the date.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q10">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a10">
+                                        10. What are the Rules for Rebooking?
+                                    </button>
+                                </h2>
+
+                                <div id="a10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <p>You must know BookingId and RebookingId.<br>
+                                            All rules that are applicable to booking are same for Rebooking.<br>
+                                            Rebooking is allowed only twice.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q11">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a11">
+                                        11. How to Rebook the TimeSlot?
+                                    </button>
+                                </h2>
+
+                                <div id="a11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <ol class="faq-list">
+                                            <li>Click on Rebooking.</li>
+                                            <li>Enter TokenId and RebookingId.</li>
+                                            <li>Select Rebooking Date from Calendar.</li>
+                                            <li>Select Timeslot of your choice.</li>
+                                            <li>Click on Rebook.</li>
+                                        </ol>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q12">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a12">
+                                        12. How many days advance booking is allowed?
+                                    </button>
+                                </h2>
+
+                                <div id="a12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <p>25 working days from today’s date.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q13">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a13">
+                                        13. Is there any limitation on time slot booking?
+                                    </button>
+                                </h2>
+
+                                <div id="a13" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <p>Yes, only 2 bookings are allowed daily for individuals.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q14">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a14">
+                                        14. How many days before a time slot should be booked?
+                                    </button>
+                                </h2>
+
+                                <div id="a14" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+                                        <p>You can book a slot for same day.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q15">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a15">
+                                        15. For which cases timeslot booking facility is not available?
+                                    </button>
+                                </h2>
+
+                                <div id="a15" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <p>1. Will Deed. 2. Adjudication</p>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q16">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a16">
+                                        16. How should I view Marathi text in estepin?
+                                    </button>
+                                </h2>
+
+                                <div id="a16" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <p>If Your computer is not indic enabled. pl follow below steps</p>
+
+                                        <ol class="faq-list">
+                                            <li>Go to control panel, regional setting, language</li>
+                                            <li>select east asian language</li>
+                                            <li>Insert windows XP CD or the OS which is installed on your computer.</li>
+                                            <li>follow the instructions on screen. </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q17">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a17">
+                                        17. What about the status of booking on Government declared holidays except gazated
+                                        holidays like local holidays, emergency holiday declared by Government on any
+                                        particluar date?
+                                    </button>
+                                </h2>
+
+                                <div id="a17" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <p>SRO is empowered to take further decision</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="q18">
+                                    <button class="accordion-button collapsed" data-bs-toggle="collapse"
+                                        data-bs-target="#a18">
+                                        18. What to do if error page is displayed?
+                                    </button>
+                                </h2>
+
+                                <div id="a18" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                    <div class="accordion-body">
+
+                                        <p>Follow the given steps:</p>
+                                        <ol class="faq-list">
+                                            <li>go to internet explorer</li>
+                                            <li>go to tools menu</li>
+                                            <li>select internet option</li>
+                                            <li>Click on delete cookies and delete files</li>
+                                            <li>finally click on OK button</li>
+                                            <li>Again go to the internet explorer and browse the site igrmaharashtra.gov.in</li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-md-7 mb-3 mb-md-0">
+                    <div class="footer-info">
+                        Information owned, maintained and updated by:
+                        <strong>Dept. Of Registration &amp; Stamps, Maharashtra</strong><br>
+                        All queries/Comments regarding the contents may be sent at IGR, Pune(M.S.)
+                    </div>
+                </div>
+
+                <div class="col-md-5 text-md-end">
+                    <div class="footer-government mb-2">Government of Maharashtra</div>
+
+                    <div class="footer-links">
+                        <a href="#">Disclaimer</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+  <script>
+    $('#bookingDate').datepicker({
+      format: 'dd/mm/yyyy',
+      todayHighlight: true,
+      autoclose: true,
+      startDate: new Date(),
+      inline: true,
+      calendarWeeks: false,
+      weekStart: 0
+    });
+
+    $('#bookingDate').on('changeDate', function (e) {
+      $('#selectedDate').val(e.format());
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>eStepin - Department of Registration & Stamps</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="top-header border-bottom">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center py-2">
+
+        <div class="d-flex align-items-center gap-3">
+          <img src="assets/igr.png" alt="Government of Maharashtra Logo" class="department-logo">
+
+          <div>
+            <div class="department-title">DEPARTMENT OF REGISTRATION &amp; STAMPS</div>
+            <div class="department-subtitle">
+              Government of Maharashtra | नोंदणी व मुद्रांक विभाग
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown d-none d-md-block">
+
+          <a href="#" class="d-flex align-items-center text-decoration-none" data-bs-toggle="dropdown"
+            aria-expanded="false">
+
+            <div class="text-end me-2">
+              <div class="small text-secondary">Wel-Come</div>
+              <div class="fw-bold" style="color: var(--primary-blue); font-size:13px;">
+                Guest User
+              </div>
+            </div>
+
+             <div class="user-icon me-2">
+            <i class="bi bi-person"></i>
+        </div>
+
+        <!-- Dropdown Arrow -->
+        <i class="bi bi-chevron-down dropdown-arrow"></i>
+
+
+          </a>
+
+          <ul class="dropdown-menu dropdown-menu-end user-dropdown">
+
+            <li>
+              <a class="dropdown-item" href="login.html">
+                <i class="bi bi-box-arrow-in-right me-2"></i>
+                Login
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="help.html">
+                <i class="bi bi-question-circle me-2"></i>
+                Help
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="notice.html">
+                <i class="bi bi-megaphone me-2"></i>
+                पूर्व सूचना
+              </a>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bi bi-download me-2"></i>
+                Download Input Form
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg main-navbar navbar-dark py-0">
+    <div class="container">
+
+      <a class="navbar-brand d-flex align-items-baseline gap-2" href="#">
+        <span class="brand-estepin">eStepin</span>
+        <span class="brand-tagline">Online Timeslot Booking</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="mainMenu">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Booking Chart</a></li>
+          <li class="nav-item"><a class="nav-link" href="booking.html">Booking</a></li>
+          <li class="nav-item"><a class="nav-link" href="receipt.html">Receipt</a></li>
+          <li class="nav-item"><a class="nav-link" href="rebooking.html">Rebooking</a></li>
+          <li class="nav-item"><a class="nav-link" href="faq.html">FAQs</a></li>
+          <li class="nav-item"><a class="nav-link" href="feedback.html">Feedback</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Sidebar -->
+        <aside class="col-lg-3">
+
+          <div class="custom-card filter-card mb-4">
+            <h4 class="filter-heading">Booking Filters</h4>
+
+            <div class="mb-3">
+              <label class="form-label">Select District</label>
+              <select class="form-select">
+                <option selected>Pune</option>
+                <option>Mumbai</option>
+                <option>Nashik</option>
+                <option>Nagpur</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Select Shift</label>
+              <select class="form-select">
+                <option selected>General</option>
+                <option>Morning</option>
+                <option>Evening</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="form-label mb-2">Select Date</label>
+<div id="bookingDate"></div>
+              <input type="hidden" id="selectedDate">
+            </div>
+          </div>
+
+          <!-- <div class="custom-card p-3 quick-links">
+            <ul class="list-unstyled mb-0">
+              <li class="mb-3"><a href="login.html">→ &nbsp;Login</a></li>
+              <li class="mb-3"><a href="help.html">→ &nbsp;Help</a></li>
+              <li class="mb-3"><a href="notice.html">→ &nbsp;पुर्व सुचना</a></li>
+<li><a href="#">→ &nbsp;Download Input Form</a></li>
+            </ul>
+          </div> -->
+
+        </aside>
+
+        <!-- Main Area -->
+        <section class="col-lg-9">
+
+          <!-- Stats -->
+          <div class="row g-3 mb-4">
+            <div class="col-md-4">
+              <div class="custom-card stat-card">
+                <div class="stat-label">Online Users</div>
+                <div class="stat-value">11</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="custom-card stat-card teal">
+                <div class="stat-label">Bookings for Tomorrow</div>
+                <div class="stat-value">629</div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="custom-card stat-card gold">
+                <div class="stat-label">Total Lifetime Bookings</div>
+                <div class="stat-value">5,285,722</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Instructions -->
+          <div class="instructions-box mb-4">
+            <h5>Help</h5>
+            <p>टाइम स्लॉट कसा बुक करावा :</p>
+            <ul>
+             <li>या स्क्रिनवरील बुकिंग या बटनावर क्लिक करावे.</li>
+             <li>जिल्हा निवडून आपल्याला ज्या तारखेचा टाइम स्लॉट बूक करावयाचा आहे ती तारीख निवडावी.</li>
+             <li>यानंतर स्क्रिनवरील दुय्यम निबंधकाच्या यादीतील दुय्यम निबंधक खालील प्रमाणे निवडावे.</li>
+             <li>बुकिंग साठी 1 दुय्यम निबंधक निवडून Continue या बटनावर क्लिक करावे.</li>
+             <li>आय सरिता पब्लिक डाटा एन्ट्रीचा ११ अंकी नंबर अथवा MKCL चा २१ अंकी नंबर टाकून बुक या बटनावर क्लिक करावे.</li>
+             <li>यानंतर मिळालेला टोकन आयडी आणि दुय्यम निबंधकाचे नाव व वेळ पुढील वापरासाठी नोंद करून घ्यावी.</li>
+             <li>त्या नंतर Receipt या बटनावर क्लिक केल्या नंतर (Ctrl + p) Press करुन प्रिंट घ्यावी.</li>
+             <li>आरक्षित केलेली माहिती घेवुन दुय्यम निबंधकाच्या कार्यालयात हजर राहणे जरुरीचे आहे.</li>
+            </ul>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <div class="col-md-7 mb-3 mb-md-0">
+          <div class="footer-info">
+            Information owned, maintained and updated by:
+            <strong>Dept. Of Registration &amp; Stamps, Maharashtra</strong><br>
+            All queries/Comments regarding the contents may be sent at IGR, Pune(M.S.)
+          </div>
+        </div>
+
+        <div class="col-md-5 text-md-end">
+          <div class="footer-government mb-2">Government of Maharashtra</div>
+
+          <div class="footer-links">
+            <a href="#">Disclaimer</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+  <script>
+    $('#bookingDate').datepicker({
+      format: 'dd/mm/yyyy',
+      todayHighlight: true,
+      autoclose: true,
+      startDate: new Date(),
+      inline: true,
+      calendarWeeks: false,
+      weekStart: 0
+    });
+
+    $('#bookingDate').on('changeDate', function (e) {
+      $('#selectedDate').val(e.format());
+    });
+  </script>
+</body>
+
+</html>
